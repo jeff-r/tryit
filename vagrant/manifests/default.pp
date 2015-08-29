@@ -26,10 +26,18 @@ node default {
     ensure => present
   }
 
+  package{"nodejs":
+    ensure => present
+  }
+
+  package{"npm":
+    ensure => present
+  }
+
   package{"rails":
     ensure   => installed,
     provider => "gem",
-    require => [ Package["zlibc"], Package["libxml2-dev"], Package["ruby-dev"], Package["zlib1g-dev"] ]
+    require => [ Package["zlibc"], Package["libxml2-dev"], Package["ruby-dev"], Package["zlib1g-dev"], Package["nodejs"] ]
   }
 
   package{"libsqlite3-dev":
