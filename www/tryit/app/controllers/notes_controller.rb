@@ -1,3 +1,5 @@
+require "pry"
+
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
@@ -14,7 +16,7 @@ class NotesController < ApplicationController
 
   # GET /notes/new
   def new
-    @note = Note.new
+    @note = Note.new(thing_id: params[:thing_id])
   end
 
   # GET /notes/1/edit
@@ -25,6 +27,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
+    # binding.pry
 
     respond_to do |format|
       if @note.save

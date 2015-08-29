@@ -1,17 +1,19 @@
 <%- model_class = Note -%>
+<p>
+<div><%= link_to "(#{@note.thing.name})", thing_path(@note.thing) %></div>
+</p>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <strong><%=t '.title', :default => @note.created_at.to_s %></strong>
 </div>
 
+
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:thing_id) %>:</strong></dt>
-  <dd><%= @note.thing_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
-  <dd><%= @note.text %></dd>
+    <div>
+        <div><%= @note.text %></div>
+    </div>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              notes_path, :class => 'btn btn-default'  %>
+<%= link_to t('.back', :default => t("helpers.links.back")), notes_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_note_path(@note), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -1,11 +1,10 @@
 <%- model_class = Thing -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => "Products" %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -14,8 +13,7 @@
   <tbody>
     <% @things.each do |thing| %>
       <tr>
-        <td><%= link_to thing.id, thing_path(thing) %></td>
-        <td><%= thing.name %></td>
+        <td><%= link_to thing.name, thing_path(thing) %></td>
         <td><%=l thing.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

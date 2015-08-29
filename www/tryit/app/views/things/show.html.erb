@@ -1,12 +1,26 @@
 <%- model_class = Thing -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%=t '.title', :default => @thing.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @thing.name %></dd>
 </dl>
+
+<div>
+    <p>Notes</p>
+    <% @thing.notes.each do |note| %>
+      <div class="row">
+          <div class="col-md-3"><%= link_to(note.created_at, note_path(note)) %></div>
+          <div class="col-md-9"><%= note.text %></div>
+      </div>
+    <% end %>
+</div>
+
+<p>&nbsp;</p>
+
+<p>
+    <%= link_to "New note", url_for(controller: "notes", action: "new", thing_id: @thing.id)  %>
+</p>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               things_path, :class => 'btn btn-default'  %>
