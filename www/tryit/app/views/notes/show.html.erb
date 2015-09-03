@@ -9,7 +9,7 @@
 
 <dl class="dl-horizontal">
     <div>
-        <div><%= @note.text %></div>
+        <div><%= sanitize format_markdown(@note.text) %></div>
     </div>
 </dl>
 
