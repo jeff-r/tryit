@@ -6,3 +6,7 @@
  *= require_tree .
  *= require_self
  */
+
+.striped-row:nth-of-type(odd) {
+  background: #efefef;
+}
