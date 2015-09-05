@@ -1,8 +1,13 @@
-Vagrant configuration for a basic vm with a Rails project.
+## Rails project to log comparison reviews of razor blades.
 
-Rails project not included.
+Why? For fun. 
 
-Inside the running vm, go to /var/www/ and run "rails new yourapp"
+Also, how people reac to double-edge safety razors is a very individual thing. Because of
+differences in razors, skin, shaving cream, and technique, a razor that is ideal for another person may
+be useless for me.
 
-The Vagrantfile specifies a box that uses the vmware provider.
-To change that, just update Vagrantfile.
+Sort of like food allergies, the only way to know if a razor works for you is to try it.
+
+And there are a lot of razors out there.
+
+So I want to keep track.
