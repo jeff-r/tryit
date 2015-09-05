@@ -5,13 +5,13 @@
 
 <dl class="dl-horizontal">
   <dt><strong>Text:</strong></dt>
-  <dd><%= @blade_review.text %></dd>
+  <dd><%= sanitize format_markdown(@blade_review.text) %></dd>
   <dt><strong>Date:</strong></dt>
   <dd><%= @blade_review.date %></dd>
   <dt><strong>Razor:</strong></dt>
-  <dd><%= @blade_review.razor.name %></dd>
+  <dd><%= link_to(@blade_review.razor.name, razor_path(@blade_review.razor)) %></dd>
   <dt><strong>Blade:</strong></dt>
-  <dd><%= @blade_review.blade.name %></dd>
+  <dd><%= link_to(@blade_review.blade.name, blade_path(@blade_review.blade)) %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

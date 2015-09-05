@@ -15,9 +15,9 @@ class BladeReviewsController < ApplicationController
   # GET /blade_reviews/new
   def new
     @blade_review = BladeReview.new
-    if params[:blade_id]
-      @blade_review.blade_id = params[:blade_id]
-    end
+    @blade_review.blade_id = params[:blade_id]
+    @blade_review.razor_id = params[:razor_id]
+    @blade_review.date = Time.now
   end
 
   # GET /blade_reviews/1/edit

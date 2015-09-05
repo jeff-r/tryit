@@ -15,7 +15,8 @@
   <tbody>
     <% @blade_reviews.each do |blade_review| %>
       <tr>
-        <td><%= link_to(blade_review.text, blade_review_path(blade_review)) %></td>
+        <% review_text = sanitize format_markdown(blade_review.text) %>
+        <td><%= link_to(review_text, blade_review_path(blade_review)) %></td>
         <td><%= blade_review.date %></td>
         <td><%= link_to(blade_review.razor.name, razor_path(blade_review.razor)) %></td>
         <td><%= link_to(blade_review.blade.name, blade_path(blade_review.blade)) %></td>
