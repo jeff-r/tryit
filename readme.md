@@ -2,7 +2,7 @@
 
 Why? For fun. 
 
-Also, how people reac to double-edge safety razors is a very individual thing. Because of
+Also, how people react to double-edge safety razors is a very individual thing. Because of
 differences in razors, skin, shaving cream, and technique, a razor that is ideal for another person may
 be useless for me.
 
