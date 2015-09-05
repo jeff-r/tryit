@@ -1,0 +1,2 @@
+module RazorsHelper
+end

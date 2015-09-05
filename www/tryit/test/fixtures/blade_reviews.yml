@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyText
+  date: 2015-09-05
+  razor_id: 1
+  blade_id: 1
+
+two:
+  text: MyText
+  date: 2015-09-05
+  razor_id: 1
+  blade_id: 1

@@ -1,0 +1,22 @@
+<%- model_class = Razor -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<p>Blade Reviews</p>
+<dl class="dl-horizontal">
+    <% @razor.blade_reviews.each do |review| %>
+      <dt><strong><%= link_to(review.blade.name, blade_review_path(review)) %>:</strong></dt>
+      <dd><%= review.text %></dd>
+    <% end %>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              razors_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_razor_path(@razor), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              razor_path(@razor),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

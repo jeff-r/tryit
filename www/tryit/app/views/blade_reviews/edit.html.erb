@@ -1,0 +1,5 @@
+<%- model_class = BladeReview -%>
+<div class="page-header">
+  <h1><%= @blade_review.blade.name %> blade with the <%= @blade_review.razor.name %> razor</h1>
+</div>
+<%= render :partial => 'form' %>
