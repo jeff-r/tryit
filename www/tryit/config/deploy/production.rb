@@ -1,0 +1,1 @@
+server 'curlydog', user: 'deployer', roles: %w{app db web}
