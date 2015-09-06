@@ -5,7 +5,7 @@ class RazorsController < ApplicationController
   # GET /razors
   # GET /razors.json
   def index
-    @razors = Razor.all
+    @razors = current_user.razors
   end
 
   # GET /razors/1
@@ -26,6 +26,7 @@ class RazorsController < ApplicationController
   # POST /razors.json
   def create
     @razor = Razor.new(razor_params)
+    @razor.user = current_user
 
     respond_to do |format|
       if @razor.save

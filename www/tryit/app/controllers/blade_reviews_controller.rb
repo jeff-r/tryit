@@ -5,7 +5,7 @@ class BladeReviewsController < ApplicationController
   # GET /blade_reviews
   # GET /blade_reviews.json
   def index
-    @blade_reviews = BladeReview.all
+    @blade_reviews = current_user.blade_reviews
   end
 
   # GET /blade_reviews/1
@@ -29,6 +29,7 @@ class BladeReviewsController < ApplicationController
   # POST /blade_reviews.json
   def create
     @blade_review = BladeReview.new(blade_review_params)
+    @blade_review.user = current_user
 
     @blade_review.date = Time.now unless @blade_review.date
 

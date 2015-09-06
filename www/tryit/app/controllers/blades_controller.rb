@@ -5,7 +5,7 @@ class BladesController < ApplicationController
   # GET /blades
   # GET /blades.json
   def index
-    @blades = Blade.all
+    @blades = current_user.blades
   end
 
   # GET /blades/1
@@ -26,6 +26,7 @@ class BladesController < ApplicationController
   # POST /blades.json
   def create
     @blade = Blade.new(blade_params)
+    @blade.user = current_user
 
     respond_to do |format|
       if @blade.save
