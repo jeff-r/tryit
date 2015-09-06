@@ -1,5 +1,6 @@
 class BladesController < ApplicationController
   before_action :set_blade, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /blades
   # GET /blades.json
