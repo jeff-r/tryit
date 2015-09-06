@@ -1,5 +1,3 @@
-require "pry"
-
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
@@ -28,7 +26,6 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(note_params)
-    # binding.pry
 
     respond_to do |format|
       if @note.save
