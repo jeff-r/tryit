@@ -14,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-    <% @blade.reviews.each do |blade_review| %>
+    <% @blade.reviews.order(date: :desc).each do |blade_review| %>
       <tr>
           <td><%= blade_review.date %></td>
           <% review_text = sanitize format_markdown(blade_review.text) %>

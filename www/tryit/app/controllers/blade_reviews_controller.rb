@@ -5,7 +5,7 @@ class BladeReviewsController < ApplicationController
   # GET /blade_reviews
   # GET /blade_reviews.json
   def index
-    @blade_reviews = current_user.blade_reviews
+    @blade_reviews = current_user.blade_reviews.order(date: :desc)
   end
 
   # GET /blade_reviews/1
